@@ -20,7 +20,7 @@ export function paginate<T>(items: readonly T[], page: number, pageSize: number)
   }
 
   const totalItems = items.length;
-  const totalPages = Math.floor(totalItems / pageSize);
+  const totalPages = Math.ceil(totalItems / pageSize);
   const start = (page - 1) * pageSize;
   const pageItems = page <= totalPages ? items.slice(start, start + pageSize) : [];
 
